@@ -1,28 +1,26 @@
-package models;
-import java.lang.Math;
 public class Point {
     private double x;
     private double y;
 
     public Point(double x, double y){
-        this.x = x;
-        this.y = y;
+        setx(x);
+        sety(y);
     }
-
-    public double getX() {
+    double getx(){
         return x;
     }
-
-    public double getY() {
+    double gety(){
         return y;
     }
-
-    public double distance(Point other){
-        return Math.sqrt((this.getX() - other.getX())*(this.getX() - other.getX()) +
-                (this.getY() - other.getY())*(this.getY() - other.getY()));
+    double getDistance(Point temp1){
+        double x1 =this.x; double x2 =temp1.getx();
+        double y1 = this.y; double y2 = temp1.gety();
+        return Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
     }
-
-    public String toString(){
-        return "Point at x: " + String.valueOf(x) + " y: " + String.valueOf(y) + '\n';
+    public void setx(double x){
+        this.x = x;
+    }
+    public void sety(double y){
+        this.y = y;
     }
 }
