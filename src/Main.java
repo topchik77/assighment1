@@ -5,16 +5,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Main {
+public class MyApplication {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\Users\\Adil\\IdeaProjects\\untitled1\\src\\source");
+        File file = new File("/Users/a.khaimuldin/IdeaProjects/assignment1se2313/src/source");
+
         Scanner sc = new Scanner(file);
         Shape shape = new Shape();
-        while (sc.hasNextLine()) {
+
+        while (sc.hasNext()) {
             double x = sc.nextDouble();
             double y = sc.nextDouble();
-            shape.addPoint(new Point(x, y));
+
+            Point point = new Point(x, y);
+            shape.addPoint(point);
         }
+
         System.out.println(shape.calculatePerimeter());
         System.out.println(shape.getLongest());
     }
