@@ -4,25 +4,18 @@ public class Point {
     private double x;
     private double y;
 
-    public Point(double x, double y){
-        setx(x);
-        sety(y);
-    }
-    double getx(){
-        return x;
-    }
-    double gety(){
-        return y;
-    }
-    double getDistance(Point temp1){
-        double x1 =this.x; double x2 =temp1.getx();
-        double y1 = this.y; double y2 = temp1.gety();
-        return Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
-    }
-    public void setx(double x){
+    public Point(double x, double y) {
         this.x = x;
-    }
-    public void sety(double y){
         this.y = y;
+    }
+
+    public double distance(Point dest) {
+        double deltaX = dest.x - this.x;
+        double deltaY = dest.y - this.y;
+        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    }
+
+    public String toString() {
+        return "(" + x + ", " + y + ")";
     }
 }
